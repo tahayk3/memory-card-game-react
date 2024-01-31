@@ -1,7 +1,16 @@
-import React from "react";
-const Card = () =>{
+import React, {useState} from "react";
+import ReactCardFlip from "react-card-flip";
+import backFace from '../images/interrogante.jpg';
+
+const Card = ({name, number, fronFace}) =>{
+    const [isFlipped, setIsFlipped] = useState(false);
     return(
-        <h1>Soy un componente Card</h1>
+        <div className="card">
+            <ReactCardFlip isFlipped={isFlipped}>
+                <img className="card-image" src={backFace}/>
+                <img className="card-image" src={fronFace}/>
+            </ReactCardFlip>
+        </div>
     );
 }
 

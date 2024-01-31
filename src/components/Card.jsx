@@ -4,10 +4,15 @@ import backFace from '../images/interrogante.jpg';
 
 const Card = ({name, number, fronFace}) =>{
     const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleClick = (e) =>{
+        setIsFlipped(!isFlipped);
+    }
+
     return(
         <div className="card">
             <ReactCardFlip isFlipped={isFlipped}>
-                <img className="card-image" src={backFace}/>
+                <img className="card-image" src={backFace} onClick={handleClick}/>
                 <img className="card-image" src={fronFace}/>
             </ReactCardFlip>
         </div>
